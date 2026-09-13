@@ -8,6 +8,11 @@ public class CellObject : MonoBehaviour
         m_cell = cell;
     }
 
+    public virtual bool PlayerWantsToEnter()
+    {
+        return true;
+    }
+
     public virtual void PlayerEntered()
     {
 

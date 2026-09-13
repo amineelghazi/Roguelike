@@ -10,4 +10,9 @@ public class WallObject : CellObject
         base.Init(cell); 
         GameManager.Instance.BoardManager.setCelltile(cell, ObstacleTile);
     }
+
+    public override bool PlayerWantsToEnter()
+    {
+        return false;
+    }
 }

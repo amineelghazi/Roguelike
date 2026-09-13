@@ -123,7 +123,7 @@ public class BoardManager : MonoBehaviour
             newWall.transform.position = CellToWorld(coord);
 
             data.ContainedObject = newWall;
-            data.Passable = false; // Mark the cell as not passable since it now contains a wall
+            
         }
     }
 
