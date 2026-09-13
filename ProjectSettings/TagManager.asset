@@ -47,11 +47,14 @@ TagManager:
   - name: Decorations
     uniqueID: 888634393
     locked: 0
-  - name: Players
-    uniqueID: 2956309783
+  - name: Foods
+    uniqueID: 967166917
     locked: 0
   - name: Enemies
     uniqueID: 359453039
+    locked: 0
+  - name: Players
+    uniqueID: 2956309783
     locked: 0
   m_RenderingLayers:
   - Default
