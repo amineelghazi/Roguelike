@@ -5,19 +5,16 @@ using System.Collections.Generic;
 
 public class BoardManager : MonoBehaviour
 {
-
     public class CellData
     {
         public bool Passable;
         public CellObject ContainedObject;
     }
 
-
     private CellData[,] m_BoardData;
     private Tilemap m_Tilemap;
     private Grid m_Grid;
     private List<Vector2Int> m_EmptyCellsList;
-
 
 
     public int Width;
@@ -27,9 +24,6 @@ public class BoardManager : MonoBehaviour
     public PlayerController Player;
     public FoodObject FoodPrefab;
     public WallObject WallPrefab;
-
-
-
 
     // Start is called before the first frame update
     public void Init()
@@ -88,6 +82,14 @@ public class BoardManager : MonoBehaviour
         m_Tilemap.SetTile(new Vector3Int(cellIndex.x, cellIndex.y, 0), tile);
     }
 
+    void AddObject(CellObject obj, Vector2Int coord)
+    {
+        CellData data = m_BoardData[coord.x, coord.y];
+        obj.transform.position = CellToWorld(coord);
+        data.ContainedObject = obj;
+        obj.Init(coord);
+    }
+
     void GenerateFood()
     {
         int foodCount = 5;
@@ -97,12 +99,8 @@ public class BoardManager : MonoBehaviour
             Vector2Int coord = m_EmptyCellsList[randomIndex];
 
             m_EmptyCellsList.RemoveAt(randomIndex); // Remove the cell from the list to avoid placing food there again
-            CellData data = m_BoardData[coord.x, coord.y];
             FoodObject newFood = Instantiate(FoodPrefab);
-
-            newFood.transform.position = CellToWorld(coord);
-
-            data.ContainedObject = newFood;
+            AddObject(newFood, coord);
         }
     }
     void GenerateWall()
@@ -113,18 +111,9 @@ public class BoardManager : MonoBehaviour
             int randomIndex = Random.Range(0, m_EmptyCellsList.Count);
             Vector2Int coord = m_EmptyCellsList[randomIndex];
 
-            m_EmptyCellsList.RemoveAt(randomIndex); 
-            CellData data = m_BoardData[coord.x, coord.y];
+            m_EmptyCellsList.RemoveAt(randomIndex);
             WallObject newWall = Instantiate(WallPrefab);
-
-            //init the wall
-            newWall.Init(coord);
-
-            newWall.transform.position = CellToWorld(coord);
-
-            data.ContainedObject = newWall;
-            
+            AddObject(newWall, coord);
         }
     }
-
 }
