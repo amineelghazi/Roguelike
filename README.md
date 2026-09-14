@@ -83,4 +83,4 @@ Assets/
 
 ## License
 
-No license yet — all rights reserved by default. If you'd like others to freely use or modify this code, consider adding one (e.g. [MIT](https://choosealicense.com/licenses/mit/)); note that Unity's tutorial art/audio assets may carry their own separate licensing terms.
+No license yet — all rights reserved by default. Note that Unity's tutorial art/audio assets may carry their own separate licensing terms.
