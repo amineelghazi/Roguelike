@@ -2,13 +2,17 @@
 
 A 2D turn-based roguelike dungeon crawler built in Unity and C#, based on Unity's official **2D Roguelike** tutorial with personal modifications on top of the base project.
 
+
 ### Architecture
-<img width="1000" height="1000" alt="diagram" src="https://github.com/user-attachments/assets/a5de005e-5e7e-48ba-bb2d-5d800b2732c2" />
+<img width="3341" height="7785" alt="diagram" src="https://github.com/user-attachments/assets/aa05567c-e129-45a2-b00a-713f733b48d7" />
+
 
 <!-- Add a screenshot or GIF of gameplay here once you have one -->
 <!-- ![Gameplay screenshot](docs/screenshot.png) -->
 ### Gameplay
 <img width="848" height="825" alt="gameplay" src="https://github.com/user-attachments/assets/93ac8678-06cf-4c27-86d0-d809524c4016" />
+
+
 
 
 ## About
